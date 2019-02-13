@@ -8,12 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/timeline", name="timeline")
      */
-    public function home()
+    public function timeline()
     {
-        return $this->render('main/index.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
+        return $this->render('main/timeline.html.twig', []);
     }
 }

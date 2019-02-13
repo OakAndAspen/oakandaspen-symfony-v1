@@ -4,9 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon" href="{{ asset("images/favicon.png") }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
     <link title="timeline-styles" rel="stylesheet"
           href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link title="timeline-styles" rel="stylesheet"
+          href="https://cdn.knightlab.com/libs/timeline3/latest/css/fonts/font.amatic-andika.css">
     <link rel="stylesheet" href="{{ asset("css/style.css") }}">
     {% block stylesheets %}{% endblock %}
 </head>
@@ -16,7 +20,7 @@
 <nav id="NavBar" class="navbar navbar-expand-md navbar-dark py-4">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src={{ asset("images/logo.png") }} alt="OakAndAspen" height="40">
+            <img src="{{ asset("images/logo.png") }}" alt="OakAndAspen" height="40">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +32,10 @@
                     <a class="nav-link" href="#">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Work</a>
+                    <a class="nav-link active" href="#">Timeline</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Work</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Life</a>
@@ -59,7 +66,6 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
-<script type="text/javascript" src="{{ asset("js/index.js") }}"></script>
 {% block javascripts %}{% endblock %}
 
 </body>

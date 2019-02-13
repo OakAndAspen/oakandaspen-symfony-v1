@@ -7,3 +7,8 @@ body {
 #NavBar {
     background-color: rgba(0,0,0,0.5);
 }
+
+#timeline-embed {
+    width: 100%;
+    height: 600px;
+}
