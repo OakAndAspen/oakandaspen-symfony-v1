@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}OakAndAspen - Contact{% endblock %}
+
+{% block body %}
+    <section class="my-4 py-4">
+        <div class="container">
+            <div class="row" id="ContactInfo">
+                <div class="col-12">
+                    <h2 class="mb-4 text-center">Contact information</h2>
+                </div>
+                <div class="col-md-4 text-center">
+                    <span class="display-1"><i class="fab fa-linkedin-in"></i></span>
+                    <p>
+                        Rue de la Madeleine 17 <br/>
+                        1800 Vevey <br/>
+                        Vaud (VD) - Switzerland (CH)
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <span class="display-1"><i class="fab fa-linkedin-in"></i></span>
+                    <p>irinadespot@gmail.com</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <span class="display-1"><i class="fab fa-linkedin-in"></i></span>
+                    <p>+41 79 638 30 34</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <h2 class="mb-4 text-center">Get in touch</h2>
+                    <form action="#">
+                        <div class="form-group">
+                            <label for="txtName">Name</label>
+                            <input type="text" class="form-control" id="txtName"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtEmail">Email address</label>
+                            <input type="text" class="form-control" id="txtEmail"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="txaMessage">Your message</label>
+                            <textarea class="form-control" id="txaMessage"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-info w-100">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

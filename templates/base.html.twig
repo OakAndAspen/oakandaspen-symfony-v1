@@ -6,11 +6,15 @@
     <title>{% block title %}Welcome!{% endblock %}</title>
     <link rel="icon" href="{{ asset("images/favicon.png") }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
-    <link title="timeline-styles" rel="stylesheet"
+    <link rel="stylesheet" title="timeline-styles"
           href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <link title="timeline-styles" rel="stylesheet"
-          href="https://cdn.knightlab.com/libs/timeline3/latest/css/fonts/font.amatic-andika.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans">
+    <link rel="stylesheet" title="timeline-styles"
+          href="https://cdn.knightlab.com/libs/timeline3/latest/css/fonts/font.ubuntu.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+          crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset("css/style.css") }}">
     {% block stylesheets %}{% endblock %}
 </head>
@@ -28,21 +32,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Timeline</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Work</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Life</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
+                {% set links = ['Blog', 'Timeline', 'Work', 'Life', 'Contact'] %}
+                {% for link in links %}
+                    {% set uri = "/" ~ link|lower  %}
+                    {% set active = app.request.requestUri == uri ? " active" : "" %}
+                    <li class="nav-item">
+                        <a class="nav-link{{ active }}" href="/{{ link|lower }}">{{ link }}</a>
+                    </li>
+                {% endfor %}
                 <li class="nav-item">
                     <a class="nav-link text-info" href="https://github.com/OakAndAspen"
                        title="Find me on Github" target="_blank">
