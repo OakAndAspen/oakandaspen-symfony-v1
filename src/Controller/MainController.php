@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     /**
-     * @Route("/", name="blog")
+     * @Route("/blog", name="blog")
      */
     public function blog()
     {
